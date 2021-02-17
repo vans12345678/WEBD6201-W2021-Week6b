@@ -185,23 +185,20 @@
           for(const contact of contacts)
           {
             let newContact = new core.Contact();
-            newContact.fromJSON(contact);
+            newContact.fromJSON(contactData);
 
-            contactData += `<tr>
-            <th scope="row" class="text-center">${contactIndex}</th>
+            data += `<tr>
+            <th scope="row" class="text-center">${index}</th>
             <td>${contact.FullName}</td>
             <td>${contact.ContactNumber}</td>
             <td>${contact.EmailAddress}</td>
-            <td class="text-center"><button value="${contactIndex}" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</button></td>
-            <td class="text-center"><button value="${contactIndex}" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt fa-sm"></i> Delete</button></td>
+            <td class="text-center"><button value="${key}" class="btn btn-primary btn-sm edit"><i class="fas fa-edit fa-sm"></i> Edit</button></td>
+            <td class="text-center"><button value="${key}" class="btn btn-danger btn-sm delete"><i class="fas fa-trash-alt fa-sm"></i> Delete</button></td>
             </tr>`;
 
-            contactIndex++;
+            index++;
             }
-            console.log(contactData);
         }
-
-        
       });
 
 
